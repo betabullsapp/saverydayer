@@ -6,7 +6,7 @@
 
 body {
     overflow-x: hidden;
-    font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: Lora-Regular;
 }
 
 .text-muted {
@@ -293,7 +293,7 @@ header .intro-text .intro-lead-in {
     margin-bottom: 25px;
     font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 22px;
-    font-style: italic;
+    /* font-style: italic; */
     line-height: 22px;
 }
 
@@ -314,7 +314,7 @@ header .intro-text .intro-heading {
 
     header .intro-text .intro-lead-in {
         margin-bottom: 25px;
-        font-family: Calibri;
+        font-family: Lora-Regular;
         font-size: 30px;
         /* font-style: italic; */
         line-height: 40px;
@@ -330,8 +330,8 @@ header .intro-text .intro-heading {
     }
 	h4{
 		font-size:25px;
-		font-weight:400px;
-		
+		font-weight:400;
+		font-family:vani;	
 	}
 	h5{
 		font-size:20px;
@@ -355,7 +355,7 @@ section h3.section-subheading {
     text-transform: none;
     font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
-    font-style: italic;
+    /* font-style: italic; */
     font-weight: 400;
 }
 
@@ -434,7 +434,7 @@ section h3.section-subheading {
     margin: 0;
     font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
-    font-style: italic;
+   /*  font-style: italic; */
 }
 
 #portfolio * {
@@ -812,7 +812,7 @@ ul.social-buttons li a:active {
     margin: 20px 0 30px;
     font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
-    font-style: italic;
+    /* font-style: italic; */
 }
 
 .portfolio-modal .modal-content ul.list-inline {
