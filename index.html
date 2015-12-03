@@ -23,7 +23,8 @@
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -34,10 +35,7 @@
 </head>
 
 <body id="page-top" class="index">
-
-    
-   
-
+<form method="post" id="myform">
     <!-- Header -->
     <header>
         <div class="container">
@@ -47,16 +45,77 @@
                     <img src="img/logo.png" align="center"><br/>	<br/>		
                         <h4>Disounts Everyday determined by you.</h4><br/>
 						<h5>Want early access to saveryday and become a saverdayer?</h5>	<br/>					
-                <a href="#services" class="page-scroll btn btn-xl">Yes, I want to become a Saverydayer</a>
-				<a href="#services" class="page-scroll btn btn-xl" style="background-color:#ed1c24; color:#fff; border:2px solid #fff">Notify Me!</a>
+                <a href="http://www.saveryday.co/" class="page-scroll btn btn-xl">Yes, I want to become a Saverydayer</a>
+				<a href="#services" class="page-scroll btn btn-xl" style="background-color:#ed1c24; color:#fff; border:2px solid #fff"  data-toggle="modal" data-target="#myModal">Notify Me!</a>
             </div>
         </div>
     </header>
 
- 
+ <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Subscribe</h4>
+      </div>
+      <div class="modal-body">
+        <p class="form-inline text-center">
+		<input type="email" class="form-control" placeholder="Enter email" id="Email" required>
+		<button type="button" class="btn btn-success" onclick="SubscribeMail()" id="btnSubscribe">Subscribe</button>
+		</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
     
 
-
+</form>
 </body>
+<script>
 
+
+
+function SubscribeMail()
+{
+if($('#Email').val()!="")
+{
+var options =
+  {
+    "apikey": "bdc58cf67ba839d8bffc0d914c8cc6c6-us12",
+    "id": "798bbedc1c",
+    "email":
+    {
+      "email": "murali.mhn18@gmail.com"
+    },
+    "send_welcome": false
+  };
+
+$.ajax({
+  url: "https://us12.api.mailchimp.com/2.0/lists/subscribe.json",
+  type: "POST",
+   cache: false,
+   data:options,
+  success: function(html){
+    $("#results").append(html);
+  },
+  error:function(xhr)
+  {
+  alert(xhr)
+  }
+});
+  
+
+}
+else
+{
+alert("Please enter your email");
+}
+}
+</script>
 </html>
